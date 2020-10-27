@@ -30,7 +30,7 @@
     }).addTo(map);
 
   // load GeoJSON from an external file -
-	$.getJSON("https://theahostetler.github.io/leaflet-intro-RATS/neighborhoods.geojson",function(hoodData){
+	$.getJSON("https://theahostetler.github.io/studio-week4/neighborhoods.geojson",function(hoodData){
 		L.geoJson( hoodData, {
 	    style: function(feature){
 	      var fillColor,
@@ -49,7 +49,7 @@
   	}).addTo(map);
 	});
 
-  $.getJSON("https://theahostetler.github.io/leaflet-intro-RATS/rodents.geojson",function(data){
+  $.getJSON("https://theahostetler.github.io/studio-week4/rodents.geojson",function(data){
 		var ratIcon = L.icon({
 			iconUrl: 'rat.png',
 			iconSize: [50,40]
