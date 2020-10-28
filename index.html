@@ -1,6 +1,9 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-  <title>A Leaflet map!</title>
+  <title>Studio Four</title>
+
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
@@ -8,11 +11,22 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
-  <style>
-    #map{ height: 100% }
+  <style type = "text/css">
   </style>
+  <!-- Adding styling info for page layout by reading in a CSS file -->
+  <link rel="stylesheet" href="styles.css"></link>
+
 </head>
 <body>
+  <h1>Studio Week 3 <br> Choropleth Map with Mapbox </h1>
+  <!-- Add multiple pages to web page-->
+  <!-- active class displays the grey box around current page-->
+  <ul>
+  	<li><a class="active" href="index.html" target="_self">Output 1</a></li>
+    <li><a href="sheetmapper.html" target="_self">Output 2</a></li>
+    <li><a href="mapbox-turfjs.html" target="_self">Output 3</a></li>
+  </ul>
+  <br>
 
   <div id="map"></div>
 
