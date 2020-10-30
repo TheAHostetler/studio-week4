@@ -8,12 +8,17 @@ ul {
 li {
  float: left;
  border-right: none;
- color: #3185FC
+ color: #3185FC;
+ border-radius: 5px;
+ margin-right: 5px;
+background-color:#D3D3D3;
 }
 
 /* Add a border to all( but not the last) list items */
 li:last-child {
  border-right: none;
+ border-radius: 5px;
+ margin-right: 5px;
 }
 
 li a {
@@ -22,11 +27,13 @@ li a {
  text-align: left;
  padding: 15px 17px;
  text-decoration: none;
+ border-radius: 5px;
 }
 
 /* Links will change color when hovered over */
 li a:hover {
- background-color: #D3D3D3;
+ background-color: #B23A48;
+ border-radius: 5px;
 }
 
 .active {
