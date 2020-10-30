@@ -17,18 +17,21 @@
 
 </head>
 <body>
-  <h1>Studio Week 4 <br> Rats and More! </h1>
+  <h1>Studio Week 4 - Rats and More! </h1>
   <!-- Add multiple pages to web page-->
   <!-- active class displays the grey box around current page-->
+
   <ul>
-  	<li><a href="index.html" target="_self">Output 1</a></li>
-    <li><a href="sheetmapper.html" target="_self">Output 2</a></li>
-    <li><a class="active" href="" target="_self">Output 3</a></li>
+    <li><a href="index.html" target="_self">Rats!</a></li>
+    <li><a href="sheetmapper.html" target="_self">Sheet Mapper</a></li>
+    <li><a class="active" href="Windmills.html" target="_self">NH Wind Turbines</a></li>
   </ul>
+  <br>
+  <h2> This map shows locations of wind turbines in the state of New Hampshire and includes some details about each turbine. Features are clustered on the map using a <a href= 'https://github.com/Leaflet/Leaflet.markercluster'>Leaflet clustering plug</a>.
+  </h2>
   <br>
 
   <div id="map"></div>
-
   <script>
 
   // initialize the map
@@ -37,25 +40,25 @@
   // load a tile layer
   L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	 maxZoom: 19,
-	 attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+	 attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>) | WindTurbine Data: &copy; <a href ="https://eerscmap.usgs.gov/uswtdb/data/">USGS USWTDB</a>'
   }).addTo(map);
 
   // load GeoJSON from an external file -
   $.getJSON("https://theahostetler.github.io/studio-week4/data/NH_Turbines.geojson",function(data){
-		var ratIcon = L.icon({
+		var windIcon = L.icon({
 			iconUrl: 'https://theahostetler.github.io/studio-week4/images/windmill.png',
-			iconSize: [50,40]
+			iconSize: [70,90]
 		});
     // add GeoJSON layer to the map once the file is loaded
-    var rodents =   L.geoJson(data,{
+    var nhwindmills =   L.geoJson(data,{
       pointToLayer: function(feature,latlng){
-        var marker = L.marker(latlng,{icon: ratIcon});
-        marker.bindPopup(feature.properties.Location + '<br/>' + feature.properties.OPEN_DT);
+        var marker = L.marker(latlng,{icon: windIcon});
+        marker.bindPopup('<b>Owner: </b>' + feature.properties.Owner + '<br/><b>Manufacturer: </b>' + feature.properties.Manufacturer + '<br/><b>Model: </b>' + feature.properties.Model + '<br><b>Year Installed: </b>' + feature.properties.Year_Installed);
         return marker;
       }
     });
     var clusters = L.markerClusterGroup();
-    clusters.addLayer(rodents);
+    clusters.addLayer(nhwindmills);
     map.addLayer(clusters);
   });
 
