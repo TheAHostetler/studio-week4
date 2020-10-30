@@ -22,7 +22,7 @@
   <!-- Add multiple pages to web page-->
   <!-- active class displays the grey box around current page-->
   <ul>
-  	<li><a class="active" href="index.html" target="_self">Rat Map!<br><img src="https://theahostetler.github.io/studio-week4/rat.png" width="40" height="25"></a></li>
+  	<li><a class="active" href="index.html" target="_self">Rat Map!<br><img src="https://theahostetler.github.io/studio-week4/images/rat.png" alt="" width="50" height="25"></a></li>
     <li><a href="sheetmapper.html" target="_self">Output 2</a></li>
     <li><a href="mapbox-turfjs.html" target="_self">Output 3</a></li>
   </ul>
@@ -44,7 +44,7 @@
     }).addTo(map);
 
   // load GeoJSON from an external file -
-  $.getJSON("https://theahostetler.github.io/studio-week4/rodents.geojson",function(data){
+  $.getJSON("https://theahostetler.github.io/studio-week4/data/rodents.geojson",function(data){
     var locations = data.features.map(function(rat) { //how does this "rat" element work?
       var location = rat.geometry.coordinates.reverse();
       location.push(0.5); //what is this 0.5?

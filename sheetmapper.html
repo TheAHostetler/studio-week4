@@ -3,7 +3,7 @@
 
 <head>
   <meta charset='utf-8' />
-  <title></title>
+  <title>Studio Four</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
@@ -91,7 +91,7 @@
       };
     };
     //YOUR TURN: add your Mapbox token
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYW1hcHBlciIsImEiOiJnZ0FDZWJrIn0.9Vck8ZXqJsSYGAYhKwLsWA'; //Mapbox token 
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW1hcHBlciIsImEiOiJnZ0FDZWJrIn0.9Vck8ZXqJsSYGAYhKwLsWA'; //Mapbox token
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/streets-v11', //stylesheet location
@@ -104,7 +104,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: '<Replace with csv export link>',
+        url: 'https://docs.google.com/spreadsheets/d/1tM2mHqSqO9-q-pK9iomVPBdRT5znQiQWEApVkSkuj4A/gviz/tq?tqx=out:csv&sheet=sheet1',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -181,6 +181,8 @@
 // Link template: https://docs.google.com/spreadsheets/d/1tM2mHqSqO9-q-pK9iomVPBdRT5znQiQWEApVkSkuj4A/gviz/tq?tqx=out:csv&sheet=sheet1
 // Published spreadsheet: https://docs.google.com/spreadsheets/d/e/2PACX-1vQgn0cXe1TKqO1pFmi5kPoyjsjLX3fcAAKCuEbLOCMr4OZuZSi-PZO-HB8Zx-ax7QQcpXm27c4UX2fy/pubhtml
 // shared link: https://docs.google.com/spreadsheets/d/1tM2mHqSqO9-q-pK9iomVPBdRT5znQiQWEApVkSkuj4A/edit?usp=sharing
+// shared with editing: https://docs.google.com/spreadsheets/d/1tM2mHqSqO9-q-pK9iomVPBdRT5znQiQWEApVkSkuj4A/edit?usp=sharing
+// exported csv shared: https://drive.google.com/file/d/1LKFYABlQwU1gQbvWEn80S6vNHhJ6AxY-/view?usp=sharing
   </script>
 
 </body>
