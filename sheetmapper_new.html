@@ -92,7 +92,7 @@
     };
     //YOUR TURN: add your Mapbox token
 
-    mapboxgl.accessToken = 'pk.eyJ1Ijoid29ybGR0cmFpbHNuZXQiLCJhIjoiY2tqZGVlenN3MGg1ajJxbnZ6c3FxN25nZCJ9.KRffm2O2O2xAjv37ZsGvmA'; //Mapbox token
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW1hcHBlciIsImEiOiJnZ0FDZWJrIn0.9Vck8ZXqJsSYGAYhKwLsWA'; //Mapbox token
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/streets-v11', // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
@@ -105,7 +105,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: 'https://docs.google.com/spreadsheets/d/1vwY0loD4WSL2VtTN3hcgkYPM1WMIIqDumizc5kjfpw0/gviz/tq?tqx=out:csv&sheet=Sheet1',
+        url: 'https://docs.google.com/spreadsheets/d/1dLkr70tfAL_-U6ipad9xLF39lHmU8k-xd08uKHkLD5M/gviz/tq?tqx=out:csv&sheet=Sheet1',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -185,6 +185,7 @@
 // Sheet ID 1vwY0loD4WSL2VtTN3hcgkYPM1WMIIqDumizc5kjfpw0
 // Sheet name: Sheet1
 // Updated link: https://docs.google.com/spreadsheets/d/1vwY0loD4WSL2VtTN3hcgkYPM1WMIIqDumizc5kjfpw0/gviz/tq?tqx=out:csv&sheet=sheet1
+// This link works in original version of sheetmapper, does not work here: https://docs.google.com/spreadsheets/d/1dLkr70tfAL_-U6ipad9xLF39lHmU8k-xd08uKHkLD5M/gviz/tq?tqx=out:csv&sheet=Sheet1
   </script>
 
 </body>
