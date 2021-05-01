@@ -53,7 +53,7 @@
     }).addTo(map);
 
   // load GeoJSON from an external file -
-  $.getJSON("https://theahostetler.github.io/studio-week4/data/rodents.geojson",function(data){
+  $.getJSON("https://theahostetler.github.io/studio-week4-2020/data/rodents.geojson",function(data){
     var locations = data.features.map(function(rat) { //how does this "rat" element work?
       var location = rat.geometry.coordinates.reverse();
       location.push(0.5); //what is this 0.5?
